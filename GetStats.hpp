@@ -16,9 +16,12 @@ public:
     int* getStats() const{
         //write your function here!
         int* result = new int[3];
+        result[0] = 0;
+        result[1] = 0;
+        result[2] = 0;
         Node* current = head;
         int numNodes = 0;
-        if (current != NULL) {
+        if (current != nullptr) {
             result[0] = current->data;
             while (current != nullptr) {
                 result[2] += current->data;
