@@ -17,6 +17,7 @@ public:
         //write your function here!
         int* result = new int[3];
         Node* current = head;
+        result[0] = current->data;
         int numNodes = 0;
         while (current != nullptr) {
             result[2] += current->data;
@@ -28,7 +29,9 @@ public:
             }
             current = current->next;
         }
-        result[2] /= numNodes;
+        if (numNodes != 0) {
+            result[2] /= numNodes;
+        }
         return result;
     }
     
