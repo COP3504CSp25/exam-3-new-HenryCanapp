@@ -17,17 +17,19 @@ public:
         //write your function here!
         int* result = new int[3];
         Node* current = head;
-        result[0] = current->data;
         int numNodes = 0;
-        while (current != nullptr) {
-            result[2] += current->data;
-            numNodes++;
-            if (current->data < result[0]) {
-              result[0] = current->data;
-            } else if (current->data > result[1]) {
-              result[1] = current->data;
+        if (current != NULL) {
+            result[0] = current->data;
+            while (current != nullptr) {
+                result[2] += current->data;
+                numNodes++;
+                if (current->data < result[0]) {
+                    result[0] = current->data;
+                } else if (current->data > result[1]) {
+                    result[1] = current->data;
+                }
+                current = current->next;
             }
-            current = current->next;
         }
         if (numNodes != 0) {
             result[2] /= numNodes;
