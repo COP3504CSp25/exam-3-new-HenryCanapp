@@ -28,6 +28,9 @@ std::map<std::string, float> returnMaxMap(const std::map<std::string, std::vecto
       if (max != -1) {
         maxMap.emplace(iter->first, max);
         }
+      else {
+          maxMap.emplace(iter->first, -1.f);
+          }
     }
     return maxMap;
 }
