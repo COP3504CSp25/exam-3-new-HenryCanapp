@@ -7,8 +7,9 @@
 
 float consultMax(const std::string& search_term, const std::map<std::string, std::vector<float>>& data) {
     //implement your function here
-    float max = 0.0f;
+    float max;
     if (data.find(search_term) != data.end()) {
+      max = data.at(search_term).at(0);
       for (size_t i = 0; i < data.at(search_term).size(); i++) {
         if (data.at(search_term).at(i) > max) {
           max = data.at(search_term).at(i);
